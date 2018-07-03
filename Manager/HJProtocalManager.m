@@ -26,6 +26,9 @@
 - (instancetype)init {
     if (self = [super init]) {
         _searviceProvideSource = [[NSMutableDictionary alloc] init];
+        
+        
+        
     }
     return self;
 }
@@ -33,6 +36,9 @@
 + (void)registServiceProvide:(id)provide forProtocol:(Protocol *)protocol {
     if (provide == nil || protocol == nil) {
         return;
+        
+        
+        
     }
     
     [[self shareInstance].searviceProvideSource setObject:provide forKey:NSStringFromProtocol(protocol)];
@@ -40,6 +46,9 @@
 
 
 + (id)serviceProvideForProtocol:(Protocol *)protocol {
+    
+    
+    
     return [[self shareInstance].searviceProvideSource objectForKey:NSStringFromProtocol(protocol)];
 }
 
